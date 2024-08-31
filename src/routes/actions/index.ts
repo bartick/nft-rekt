@@ -10,11 +10,12 @@ import {
     Transaction, 
     PublicKey, 
     Connection,
+    clusterApiUrl
 } from '@solana/web3.js';
 
 const router = Router();
 
-const connection = new Connection('https://api.devnet.solana.com', 'confirmed');
+const connection = new Connection(clusterApiUrl('devnet'), 'confirmed');
 
 router.get('/', (_: Request, res: Response) => {
     const payload: ActionGetResponse = {
@@ -56,7 +57,7 @@ router.post('/', async (req: Request, res: Response) => {
         keys: [],
         programId: new PublicKey(MEMO_PROGRAM_ID),
         data: Buffer.from(memoMessage, 'utf8'), // The message to be signed
-    })
+    });
     tx.recentBlockhash = (await connection.getLatestBlockhash()).blockhash;
     tx.feePayer = authority;
 
