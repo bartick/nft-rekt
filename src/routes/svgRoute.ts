@@ -2,7 +2,9 @@ import { Router } from 'express';
 import { manipulateSvg } from '../utils/svgManipulator'; // Remove .ts extension
 
 const router = Router();
-
+router.get('/health', (req, res) => {
+    res.status(200).json({ status: 'OK', message: 'SVG Router is healthy' });
+});
 router.get('/generate-svg', async (req, res) => {
     try {
         const {
