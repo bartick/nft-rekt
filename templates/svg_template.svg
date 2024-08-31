@@ -1,0 +1,35 @@
+<svg width="400" height="400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <foreignObject width="400" height="400">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <style>
+                .container { font-family: Arial, sans-serif; text-align: center; }
+                .title { font-size: 24px; color: #0000FF; font-weight: bold; margin-bottom: 10px; }
+                .subtitle { font-size: 18px; color: #0000FF; margin-bottom: 20px; }
+                .section-title { font-size: 20px; color: #0000FF; margin: 20px 0; }
+                .losses { display: flex; justify-content: space-around; }
+                .loss-item { width: 30%; }
+                .loss-image { width: 100px; height: 100px; margin-bottom: 10px; }
+                .loss-value { font-size: 16px; color: #FF00FF; }
+            </style>
+            <div class="container">
+                <h1 class="title">{{mainTitle}}</h1>
+                <p class="subtitle">{{subtitle}}</p>
+                <h2 class="section-title">{{sectionTitle}}</h2>
+                <div class="losses">
+                    <div class="loss-item">
+                        <img src="{{image1}}" alt="Loss 1" class="loss-image"/>
+                        <p class="loss-value">{{value1}}</p>
+                    </div>
+                    <div class="loss-item">
+                        <img src="{{image2}}" alt="Loss 2" class="loss-image"/>
+                        <p class="loss-value">{{value2}}</p>
+                    </div>
+                    <div class="loss-item">
+                        <img src="{{image3}}" alt="Loss 3" class="loss-image"/>
+                        <p class="loss-value">{{value3}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </foreignObject>
+</svg>
